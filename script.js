@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Пример данных для графиков
-    const weight1Data = [10, 20, 30];
+    const weight1Data = [5,10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130,140,150,160 ];
     const weight2Data = [15, 25, 35];
     const temperatureData = [20, 22, 24];
     const humidityData = [50, 55, 60];
