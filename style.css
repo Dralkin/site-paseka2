@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
@@ -12,4 +13,20 @@ body {
     font-size: 16px;
     color: #333;
     margin-top: 10px;
+}
+
+#weight1 {
+    background-color: black;
+}
+
+#weight2 {
+    background-color: brown;
+}
+
+#temperature {
+    background-color: red;
+}
+
+#humidity {
+    background-color: blue;
 }

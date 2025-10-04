@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const humidityData = [50, 55, 60];
 
     // Функция для создания графика
-    function createChart(canvasId, data, label) {
+    function createChart(canvasId, data, label, color) {
         const ctx = document.getElementById(canvasId).getContext('2d');
         new Chart(ctx, {
             type: 'line',
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 datasets: [{
                     label: label,
                     data: data,
-                    backgroundColor: '#ff6384'
+                    backgroundColor: color
                 }]
             },
             options: {}
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Создание графиков
-    createChart('weight1', weight1Data, 'Вес1');
-    createChart('weight2', weight2Data, 'Вес2');
-    createChart('temperature', temperatureData, 'Температура');
-    createChart('humidity', humidityData, 'Влажность');
+    createChart('weight1', weight1Data, 'Вес1', 'black');
+    createChart('weight2', weight2Data, 'Вес2', 'brown');
+    createChart('temperature', temperatureData, 'Температура', 'red');
+    createChart('humidity', humidityData, 'Влажность', 'blue');
 });
