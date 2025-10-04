@@ -15,17 +15,17 @@ body {
 }
 
 #weight1 {
-    background-color: rgb(250, 247, 247);
+    background-color: rgba(241, 240, 240, 0.945);
 }
 
 #weight2 {
-    background-color: rgb(247, 244, 244);
+    background-color: rgba(252, 250, 250, 0.938);
 }
 
 #temperature {
-    background-color: rgb(245, 240, 240);
+    background-color: rgba(241, 236, 236, 0.904);
 }
 
 #humidity {
-    background-color: rgb(247, 247, 248);
+    background-color: rgba(241, 241, 247, 0.945);
 }
