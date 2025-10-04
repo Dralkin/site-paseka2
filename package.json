@@ -1,0 +1,18 @@
+{
+  "name": "c",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "npm install express socket.io chart.js cors body-parser dotenv",
+  "scripts": {
+    "test": "npm install express socket.io chart.js cors body-parser dotenv"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "chart.js": "^4.5.0",
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1"
+  }
+}
