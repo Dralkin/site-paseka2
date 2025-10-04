@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Data Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>ESP32 Data Dashboard</h1>
+    <div class="graph-container">
+        <canvas id="weight1"></canvas>
+        <p class="graph-label">Вес1</p>
+    </div>
+    <div class="graph-container">
+        <canvas id="weight2"></canvas>
+        <p class="graph-label">Вес2</p>
+    </div>
+    <div class="graph-container">
+        <canvas id="temperature"></canvas>
+        <p class="graph-label">Температура1</p>
+    </div>
+    <div class="graph-container">
+        <canvas id="humidity"></canvas>
+        <p class="graph-label">Влажность</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3/dist/chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
