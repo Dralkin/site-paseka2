@@ -1,52 +1,30 @@
- const ctx = document.getElementById('graph').getContext('2d');
-let chartInstance = null;
-getElementById('myRange').addEventListener('input', function(e) {
-    let value = e.target.value;
+document.addEventListener('DOMContentLoaded', function() {
+    // Пример данных для графиков
+    const weight1Data = [10, 20, 30];
+    const weight2Data = [15, 25, 35];
+    const temperatureData = [20, 22, 24];
+    const humidityData = [50, 55, 60];
 
-fetch('/api/data')
-    .then(response => response.json())
-    .then(data => renderChart(data));
-
-async function fetchData() {
-    const response = await fetch('/api/data');
-    const json = await response.json();
-    renderChart(json);
-}
-
-setInterval(fetchData, 30 * 60 * 1000); // Обновлять каждые полчаса
-
-function renderChart(data) {
-    if (!chartInstance) {
-        chartInstance = new Chart(ctx, {
+    // Функция для создания графика
+    function createChart(canvasId, data, label, color) {
+        const ctx = document.getElementById(canvasId).getContext('2d');
+        new Chart(ctx, {
             type: 'line',
             data: {
-                labels: data.timestamps.map(ts => new Date(ts)),
+                labels: ['12:00', '12:30', '13:00'],
                 datasets: [{
-                    label: 'Вес 1',
-                    data: data.weight1,
-                    fill: false,
-                    borderColor: 'black'
-                }, {
-                    label: 'Вес 2',
-                    data: data.weight2,
-                    fill: false,
-                    borderColor: 'brown'
-                }, {
-                    label: 'Температура',
-                    data: data.temperature,
-                    fill: false,
-                    borderColor: 'red'
-                }, {
-                    label: 'Влажность',
-                    data: data.humidity,
-                    fill: false,
-                    borderColor: 'blue'
+                    label: label,
+                    data: data,
+                    backgroundColor: color
                 }]
             },
             options: {}
         });
-    } else {
-        chartInstance.data.labels = data.timestamps.map(ts => new Date(ts));
-        chartInstance.update();
     }
-}     
+
+    // Создание графиков
+    createChart('weight1', weight1Data, 'Вес1', 'black');
+    createChart('weight2', weight2Data, 'Вес2', 'brown');
+    createChart('temperature', temperatureData, 'Температура', 'red');
+    createChart('humidity', humidityData, 'Влажность', 'blue');
+});

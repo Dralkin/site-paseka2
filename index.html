@@ -7,16 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <canvas id="graph"></canvas>
-        <label>Вес 1:</label><span id="weight1">--</span>
-        <label>Вес 2:</label><span id="weight2">--</span>
-        <label>Температура:</label><span id="temp">--</span>
-        <label>Влажность:</label><span id="humid">--</span>
+    <h1>ESP32 Data Dashboard</h1>
+    <div class="graph-container">
+        <canvas id="weight1"></canvas>
+        <p class="graph-label">Вес1</p>
     </div>
-    <div class="slider-container">
-    <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
-</div>
+    <div class="graph-container">
+        <canvas id="weight2"></canvas>
+        <p class="graph-label">Вес2</p>
+    </div>
+    <div class="graph-container">
+        <canvas id="temperature"></canvas>
+        <p class="graph-label">Температура</p>
+    </div>
+    <div class="graph-container">
+        <canvas id="humidity"></canvas>
+        <p class="graph-label">Влажность</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3/dist/chart.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
