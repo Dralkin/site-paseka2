@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Пример данных для графиков
-    const weight1Data = [5,10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130,140,150,160 ];
+    const weight1Data = [25, 35, 45 ];
     const weight2Data = [15, 25, 35];
     const temperatureData = [20, 22, 24];
     const humidityData = [50, 55, 60];
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['12:00', '12:30', '13:00'],
+                labels: ['12:00', '12:30', '13:00', '13:30','14:00','14:30' ],
                 datasets: [{
                     label: label,
                     data: data,
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Создание графиков
-    createChart('weight1', weight1Data, 'Вес1', 'black');
+    createChart('weight1','weight2', weight1Data, weight2Data,'Вес1','Вес2', 'black');
     createChart('weight2', weight2Data, 'Вес2', 'brown');
     createChart('temperature', temperatureData, 'Температура', 'red');
     createChart('humidity', humidityData, 'Влажность', 'blue');
