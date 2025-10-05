@@ -1,5 +1,7 @@
  const ctx = document.getElementById('graph').getContext('2d');
 let chartInstance = null;
+getElementById('myRange').addEventListener('input', function(e) {
+    let value = e.target.value;
 
 fetch('/api/data')
     .then(response => response.json())
