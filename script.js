@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    getElementById('myRange').addEventListener('input', function(e) {
-    let value = e.target.value;
-    // Реализуйте логику смещения графика в зависимости от положения ползунка
-});
+    
     // Пример данных для графиков
     const weight1Data = [10, 20, 30];
     const weight2Data = [15, 25, 35];
@@ -31,4 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
     createChart('weight2', weight2Data, 'Вес2', 'brown');
     createChart('temperature', temperatureData, 'Температура', 'red');
     createChart('humidity', humidityData, 'Влажность', 'blue');
+    getElementById('myRange').addEventListener('input', function(e) {
+    let value = e.target.value;
+    // Реализуйте логику смещения графика в зависимости от положения ползунка
+});
 });
