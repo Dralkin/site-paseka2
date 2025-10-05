@@ -1,22 +1,19 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Данные с ESP32</title>
-  <link rel="stylesheet" href="./css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Data Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Мониторинг данных с ESP32</h1>
-  <canvas id="chartCanvas" width="800" height="400"></canvas>
-  <label>Время:</label><span id="currentTime"></span>
-  <br/>
-  <label>Вес 1:</label><span id="weight1"></span>
-  <br/>
-  <label>Вес 2:</label><span id="weight2"></span>
-  <br/>
-  <label>Температура:</label><span id="temperature"></span>
-  <br/>
-  <label>Влажность:</label><span id="humidity"></span>
-  <script src="./js/script.js"></script>
+    <div class="container">
+        <canvas id="graph"></canvas>
+        <label>Вес 1:</label><span id="weight1">--</span>
+        <label>Вес 2:</label><span id="weight2">--</span>
+        <label>Температура:</label><span id="temp">--</span>
+        <label>Влажность:</label><span id="humid">--</span>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

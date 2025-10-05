@@ -1,40 +1,50 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const canvas = document.getElementById('chartCanvas');
-  const ctx = canvas.getContext('2d');
-  const labels = ['Weight 1', 'Weight 2', 'Temperature', 'Humidity'];
-  const colors = ['black', 'brown', 'red', 'blue']; // Цвета линий
-  const datasets = []; // Массивы данных для графика
+ const ctx = document.getElementById('graph').getContext('2d');
+let chartInstance = null;
 
-  fetch('/data')
+fetch('/api/data')
     .then(response => response.json())
-    .then(data => {
-      Object.keys(data).forEach(key => {
-        datasets.push({ label: key, data: [], color: colors.pop() });
-      });
-      
-      const chart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: [],
-          datasets: datasets.map(ds => ({
-            label: ds.label,
-            data: ds.data,
-            backgroundColor: ds.color,
-            borderColor: ds.color,
-            fill: false
-          }))
-        },
-        options: {}
-      });
+    .then(data => renderChart(data));
 
-      setInterval(() => {
-        fetch('/data')
-          .then(response => response.json())
-          .then(newData => {
-            chart.data.labels.push(new Date().toLocaleTimeString()); // Добавляем временные метки
-            datasets.forEach(dataset => dataset.data.push(newData[dataset.label]));
-            chart.update();
-          });
-      }, 30000); // Период обновления графика (здесь 30 сек., можно увеличить)
-    });
-});
+async function fetchData() {
+    const response = await fetch('/api/data');
+    const json = await response.json();
+    renderChart(json);
+}
+
+setInterval(fetchData, 30 * 60 * 1000); // Обновлять каждые полчаса
+
+function renderChart(data) {
+    if (!chartInstance) {
+        chartInstance = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.timestamps.map(ts => new Date(ts)),
+                datasets: [{
+                    label: 'Вес 1',
+                    data: data.weight1,
+                    fill: false,
+                    borderColor: 'black'
+                }, {
+                    label: 'Вес 2',
+                    data: data.weight2,
+                    fill: false,
+                    borderColor: 'brown'
+                }, {
+                    label: 'Температура',
+                    data: data.temperature,
+                    fill: false,
+                    borderColor: 'red'
+                }, {
+                    label: 'Влажность',
+                    data: data.humidity,
+                    fill: false,
+                    borderColor: 'blue'
+                }]
+            },
+            options: {}
+        });
+    } else {
+        chartInstance.data.labels = data.timestamps.map(ts => new Date(ts));
+        chartInstance.update();
+    }
+}     
