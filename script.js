@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Пример данных для графиков
-    const weight1Data = [25, 35, 45 ];
-    const weight2Data = [15, 25, 35];
-    const temperatureData = [20, 22, 24];
-    const humidityData = [50, 55, 60];
+    const weight1Data = [20, 45, 55, 65, 75];
+    const weight2Data = [15, 25, 35, 40, 60];
+    const temperatureData = [20, 22, 24, 28, 15];
+    const humidityData = [50, 55, 60, 88, 25];
 
     // Функция для создания графика
     function createChart(canvasId, data, label, color) {
