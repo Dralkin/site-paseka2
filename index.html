@@ -3,57 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chart.js/3.7.0/chart.min.js"></script>
-    <style>
-        canvas {
-            background-color: white;
-        }
-        label {
-            display: block;
-            margin-bottom: 1rem;
-        }
-        input[type='range'] {
-            width: 100%;
-        }
-    </style>
+    <title>ESP32 Data Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="myChart"></canvas>
-    <label for="weight1">Вес 1:</label><input type="range" min="0" max="100" value="50" class="slider" id="weight1Slider"><br/>
-    <label for="weight2">Вес 2:</label><input type="range" min="0" max="100" value="50" class="slider" id="weight2Slider"><br/>
-    <label for="temp">Температура:</label><input type="range" min="0" max="100" value="50" class="slider" id="tempSlider"><br/>
-    <label for="humidity">Влажность:</label><input type="range" min="0" max="100" value="50" class="slider" id="humiditySlider"><br/>
-
-    <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Day', 'Week', 'Month'],
-                datasets: [{
-                    label: 'Weight 1',
-                    data: [12, 19, 3],
-                    borderColor: 'black',
-                    fill: false
-                }, {
-                    label: 'Weight 2',
-                    data: [5, 2, 10],
-                    borderColor: 'brown',
-                    fill: false
-                }, {
-                    label: 'Temperature',
-                    data: [2, 3, 20],
-                    borderColor: 'red',
-                    fill: false
-                }, {
-                    label: 'Humidity',
-                    data: [65, 59, 80],
-                    borderColor: 'blue',
-                    fill: false
-                }]
-            },
-            options: {}
-        });
-    </script>
+    <h1>ESP32 Data Dashboard</h1>
+    <div class="graph-container">
+        <canvas id="weight1"></canvas>
+        <p class="graph-label">Вес1</p>
+    </div>
+    <div class="graph-container">
+        <canvas id="weight2"></canvas>
+        <p class="graph-label">Вес2</p>
+    </div>
+    <div class="graph-container">
+        <canvas id="temperature"></canvas>
+        <p class="graph-label">Температура</p>
+    </div>
+    <div class="graph-container">
+        <canvas id="humidity"></canvas>
+        <p class="graph-label">Влажность</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3/dist/chart.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
