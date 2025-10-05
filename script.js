@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+    getElementById('myRange').addEventListener('input', function(e) {
+    let value = e.target.value;
+    // Реализуйте логику смещения графика в зависимости от положения ползунка
+});
     // Пример данных для графиков
     const weight1Data = [10, 20, 30];
     const weight2Data = [15, 25, 35];
