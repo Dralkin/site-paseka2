@@ -1,29 +1,22 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESP32 Данные с пасечных весов</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Данные с ESP32</title>
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <h1>ESP32 Данные с пасечных весов</h1>
-    <div class="graph-container">
-        <canvas id="weight1"></canvas>
-        <p class="graph-label">Вес1</p>
-    </div>
-    <div class="graph-container">
-        <canvas id="weight2"></canvas>
-        <p class="graph-label">Вес2</p>
-    </div>
-    <div class="graph-container">
-        <canvas id="temperature"></canvas>
-        <p class="graph-label">Температура</p>
-    </div>
-    <div class="graph-container">
-        <canvas id="humidity"></canvas>
-        <p class="graph-label">Влажность</p>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3/dist/chart.min.js"></script>
-    <script src="script.js"></script>
+  <h1>Мониторинг данных с ESP32</h1>
+  <canvas id="chartCanvas" width="800" height="400"></canvas>
+  <label>Время:</label><span id="currentTime"></span>
+  <br/>
+  <label>Вес 1:</label><span id="weight1"></span>
+  <br/>
+  <label>Вес 2:</label><span id="weight2"></span>
+  <br/>
+  <label>Температура:</label><span id="temperature"></span>
+  <br/>
+  <label>Влажность:</label><span id="humidity"></span>
+  <script src="./js/script.js"></script>
 </body>
 </html>

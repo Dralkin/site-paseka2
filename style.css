@@ -1,31 +1,14 @@
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: white;
 }
 
-.graph-container {
-    text-align: center;
-    margin-bottom: 20px;
+canvas {
+  border: 1px solid black;
+  margin: 20px auto;
 }
 
-.graph-label {
-    font-size: 16px;
-    color: #333333;
-    margin-top: 10px;
-}
-
-#weight1 {
-    background-color: rgb(248, 247, 247);
-}
-
-#weight2 {
-    background-color: rgb(245, 243, 243);
-}
-
-#temperature {
-    background-color: rgb(240, 235, 235);
-}
-
-#humidity {
-    background-color: rgb(242, 242, 245);
+span {
+  font-weight: bold;
 }
