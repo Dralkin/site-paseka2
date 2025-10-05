@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Создание графиков
-    createChart('weight1', weight1Data,'Вес1', 'black') ('weight2', weight2Data, 'Вес2', 'brown');
+    createChart('weight1', weight1Data,'Вес1', 'black') ;createChart ('weight2', weight2Data, 'Вес2', 'brown');
     createChart('temperature', temperatureData, 'Температура', 'red');
     createChart('humidity', humidityData, 'Влажность', 'blue');
 });
